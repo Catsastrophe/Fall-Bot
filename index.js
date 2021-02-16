@@ -6,4 +6,9 @@ const client = new Discord.Client();
 
 event_handler.performEvents(client);
 
-client.login(configs.token)
+client.login(process.env.TOKEN)
+
+/*
+* Hello
+* - danik, 2021
+*/
