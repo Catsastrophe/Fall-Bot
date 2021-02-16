@@ -19,7 +19,7 @@ module.exports = {
             `Go To https://snowmusic.gq to get me!`,
             `I am being coded on OwO`,
             `How are you today?`,
-            `DANIK MADE A RELOAD COMMAND POG!!`,
+            `DANIK MADE A RELOAD COMMAND POG!!!`,
             `Cats or Dogs?`,
             `Discord Is Watching You....`,
             `Worship Cthulhu 6 times a day`
