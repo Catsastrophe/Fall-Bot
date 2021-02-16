@@ -20,7 +20,7 @@ module.exports = {
             `I am being coded on OwO`,
             `How are you today?`,
             `DANIK MADE A RELOAD COMMAND POG`,
-            `Cats or Dogs`,
+            `Cats or Dogs?`,
             `Discord Is Watching You....`,
             `Worship Cthulhu 6 times a day`
         ]
