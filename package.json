@@ -1,8 +1,20 @@
 {
-  "name": "new-music-bot",
-  "version": "1.0.0",
-  "description": "A simple Music Bot Made By DarkerInk",
-  "main": "index.js",
+  "name": "dark-snow-music",
+  "version": "1.0.1",
+  "description": "This Music bot is made by darkerink because my old bot sucked",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "discord.js-commando": "^0.12.2",
+    "g-i-s": "^2.1.6",
+    "lyrics-finder": "^21.4.0",
+    "youtube-sr": "^2.0.1",
+    "yt-search": "^2.2.4",
+    "ytdl-core": "^4.1.1",
+    "ytdl-core-discord": "^1.2.4",
+    "ytpl": "^2.0.0-alpha.3"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
