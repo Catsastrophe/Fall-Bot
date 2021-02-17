@@ -3,7 +3,6 @@ const db = require("quick.db")
 
 module.exports = {
   name: "warn",
-  category: "moderation",
   usage: "warn <@mention> <reason>",
   description: "Warn anyone who do not obey the rules",
     execute: async (message, args, client) => {

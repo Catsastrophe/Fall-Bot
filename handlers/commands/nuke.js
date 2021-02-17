@@ -5,6 +5,7 @@ const {
 const colors = require('../../conf/colors.json');
 module.exports = {
     name: 'nuke',
+    aliases: ["n"],
     guildOnly: false,
     description: 'Nuke that crappy channel',
     execute: async (message, args) => {
