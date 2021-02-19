@@ -8,7 +8,11 @@ event_handler.performEvents(client);
 
 client.login(process.env.TOKEN)
 
-/*
-* Hello
-* - danik, 2021
+client.on('message', message => {
+   if (message.content.startsWith(configs.prefix)) console.log(message.author.tag + '@' + message.guild.name + ' :: ' + message.content)
+   });
+
+/*client.on('message', message => {
+   console.log(message.content); 
+   });
 */

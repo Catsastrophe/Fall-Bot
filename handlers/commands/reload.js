@@ -15,7 +15,7 @@ module.exports = {
     if (!config.owners.includes(message.author.id)) return
             
     client.commands = undefined
-    console.log(client.commands)
+   console.log(client.commands)
 
     client.commands = new Discord.Collection();
 
@@ -31,5 +31,5 @@ module.exports = {
         }
     
       message.channel.send('Done')
-  }
+    }
 }

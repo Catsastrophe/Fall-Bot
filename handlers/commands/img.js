@@ -3,6 +3,19 @@ const { prefix } = require('../../conf/config.json')
 const colors = require('../../conf/colors.json')
 const gis = require('g-i-s')
 
+const nsfw_array = [
+  'porn',
+  'hentai',
+  'gore',
+  'sex',
+  'boobs',
+  'pussy',
+  'sex',
+  'nsfw',
+  'ass',
+  'panties'
+]
+
 module.exports = {
     name: 'img',
     aliases: ['image', 'search', 'googleimage', 'imagesearch', 'searchimage'],
@@ -12,6 +25,8 @@ module.exports = {
       const search = args.join(' ')
 
       if (search.length < 1) return message.channel.send('Please specify a search querry')
+
+      if (nsfw_array.includes(search.toLowerCase()) && !message.channel.nsfw) return message.channel.send('You are searching an nsfw term. Please search it in an NSFW channel.')
 
       x = await message.channel.send('Searching: `' + search + '`')
 
