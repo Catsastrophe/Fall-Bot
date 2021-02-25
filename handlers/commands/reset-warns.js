@@ -5,11 +5,12 @@ module.exports = {
   aliases: ["rwarns"],
   usage: "rwarns <@user>",
   description: "Reset warnings of mentioned person",
+  category: "Moderation",
     execute: async (message, args, client) => {
     
     
     if(!message.member.hasPermission("ADMINISTRATOR")) {
-      return message.channel.send("Yopu should have admin perms to use this command")
+      return message.channel.send("You should have admin perms to use this command")
     }
     
     const user = message.mentions.members.first()

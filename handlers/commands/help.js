@@ -1,66 +1,58 @@
-
 const Discord = require('discord.js');
-const {
-    prefix
-} = require('../../conf/config.json');
-const colors = require('../../conf/colors.json');
+const configs = require('../../conf/config.json');
 module.exports = {
     name: 'help',
-    guildOnly: true,
-    description: 'help command!',
-    execute(message, args, client) {
+    guildOnly: false,
+    usage: "help <cmd>",
+    description: 'Get Help',
+    category: "info",
+    execute: async (message, args, client) => {
+    if (args[0]) {
+      const command = await client.commands.get(args[0]);
+
+      if (!command) {
+        return message.channel.send("Unknown Command: " + args[0]);
+      }
+
       const embed = new Discord.MessageEmbed()
-        .setTitle('HELP')
-        .setDescription('This is the bot help. The prefix is `' + prefix + '`')
-        .setColor(colors.pumpkin)
+        .setAuthor(command.name, client.user.displayAvatarURL())
+        .addField("Description", command.description || "Not Provided :(")
+        .addField("Usage", "`" + command.usage + "`" || "Not Provied")
+        .addField("Info", "Tad Bit of Info [channel] Means the channel you are in <message> means You need a message")
+        .setThumbnail(client.user.displayAvatarURL())
+        .setColor("GREEN")
+        .setFooter(client.user.username, client.user.displayAvatarURL());
 
-      client.commands.array().forEach((i) => {
-        if (i.ownerOnly) return
+      return message.channel.send(embed);
+    } else {
+      const commands = await client.commands;
 
-        if (i.description) {
-          embed.addField('`' + i.name + '`', i.description)
-        } else {
-          embed.addField('`' + i.name + '`', 'There is no description')
+      let emx = new Discord.MessageEmbed()
+        .setDescription(`Fall Music **Premium** | Version: ${configs.version}`)
+        .setColor("GREEN")
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setThumbnail(client.user.displayAvatarURL());
+
+      let com = {};
+      for (let comm of commands.array()) {
+        let category = comm.category || "No Category";
+        let name = comm.name;
+
+        if (!com[category]) {
+          com[category] =  [];
         }
-      })
+        com[category].push(name);
+      }
 
-      message.channel.send(embed)
+      for(const [key, value] of Object.entries(com)) {
+        let category = key;
 
-      /*  console.log('start')
-        let server = message.guild;
-        const data = [];
-        const {
-            commands
-        } = message.client;
+        let desc = "`" + value.join("`, `") + "`";
 
-        if (!args.length) {
+        emx.addField(`${category.toUpperCase()} [${value.length}]`, desc);
+      }
 
-        }
-
-        console.log('1')
-        const embed = new Discord.MessageEmbed()
-            .setTitle(`${server.name} Help`)
-            .setColor(colors.mainColor)
-            .setDescription(`My Commands\nDon\'t forget that the prefix is \`${prefix}\``)
-            .addField("Commands", commands.filter(e => !e.modOnly).map(command => '`' + command.name + '` - ' + command.description).join('\n'))
-
-       /* client.commands.filter(e => !e.modOnly).forEach((i) => {
-          embed.addField('`' + i.name + '` - ' + i.description)
-        })
-*//*
-      console.log('2')
-        message.channel.send(embed).catch((err) => {
-          message.channel.send('```fix\n' + err + '\n```')
-        })
-
-      console.log('3')*/
-
-      /*  data.push(embed);
-
-        return message.channel.send(data, {
-                split: true
-            }); */
-},
+      return message.channel.send(emx);
+    }
+  }
 };
-
-

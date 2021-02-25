@@ -21,6 +21,8 @@ module.exports = {
     aliases: ['image', 'search', 'googleimage', 'imagesearch', 'searchimage'],
     guildOnly: true,
     description: 'search google images',
+    usage: "img <message>",
+    category: "Fun",
     execute: async (message, args, client) => {
       const search = args.join(' ')
 

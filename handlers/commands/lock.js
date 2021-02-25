@@ -3,7 +3,9 @@ const Discord = module.require("discord.js");
 module.exports = {
     name: 'lock',
     guildOnly: false,
-    description: 'Make the bot say that nasty thing',
+    description: 'Lock the channel: Bugged Atm',
+    usage: "lock [channel]",
+    category: "Moderation",
         execute: async (message, args) => {
         if (!message.member.hasPermission('MANAGE_MESSAGES'))
             return message.channel.send('You do not have permission to use this command.').then(m => m.delete({timeout: 5000}));

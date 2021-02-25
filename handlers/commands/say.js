@@ -5,8 +5,10 @@ const {
 const colors = require('../../conf/colors.json');
 module.exports = {
     name: 'say',
-    guildOnly: false,
+    guildOnly: true,
     description: 'Make the bot say that nasty thing',
+    usage: "say <message>",
+    category: "Fun",
     execute: async (message, args) => {
         message.delete()
 

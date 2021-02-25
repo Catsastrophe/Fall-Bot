@@ -4,7 +4,9 @@ const Color = `RANDOM`;
 
 module.exports = {
   name: "math",
-  description: "testo",
+  description: "Get a answer on A Math problem",
+  usage: "math <mathproblem>",
+  category: "Fun",
   execute: async (message, args, client) => {
     try {
       if (!args[0]) return message.channel.send("Please Give Me Equation!");

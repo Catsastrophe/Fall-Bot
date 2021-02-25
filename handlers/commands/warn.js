@@ -5,6 +5,7 @@ module.exports = {
   name: "warn",
   usage: "warn <@mention> <reason>",
   description: "Warn anyone who do not obey the rules",
+  category: "Moderation",
     execute: async (message, args, client) => {
     
     if(!message.member.hasPermission("ADMINISTRATOR")) {

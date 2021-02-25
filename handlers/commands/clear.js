@@ -5,8 +5,10 @@ const {
 const colors = require('../../conf/colors.json');
 module.exports = {
     name: 'clear',
-    guildOnly: false,
+    guildOnly: true,
     description: 'clear Daniks spam',
+    usage: "clear <number 1-100>",
+    category: "Moderation",
     execute: async (message, args) => {
     
             

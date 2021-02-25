@@ -6,6 +6,8 @@ const Fetch = require("node-fetch");
 module.exports = {
     name: "meme",
     description: "Send A Meme!",
+    usage: "get a random meme",
+    category: "Fun",
     execute: async (message, args, client) => {
 
         //Start

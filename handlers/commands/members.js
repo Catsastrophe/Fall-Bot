@@ -3,6 +3,8 @@ const discord = require("discord.js");
 module.exports = {
   name: "membercount",
   description: "How Many members let me think....",
+  usage: "membercount",
+  category: "info",
   execute: async (message, args, client) => {
     
     let embed = new discord.MessageEmbed()

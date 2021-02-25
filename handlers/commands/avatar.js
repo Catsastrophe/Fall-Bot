@@ -3,8 +3,9 @@ const discord = require("discord.js")
 module.exports = {
   name: "avatar",
   aliases: ["av"],
-  category: "info",
-  description: "Get dp of any user",
+  category: "Utility",
+  usage: "avatar <@mention>",
+  description: "Get the avatar of someone",
   execute: async (message, args, client) => {
     
     let target

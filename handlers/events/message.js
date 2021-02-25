@@ -16,7 +16,7 @@ module.exports = {
           r = Math.random()
           console.log(r)
 
-          if (r < 0.3 && r > 0.2) m.value = 'I feel bad for being in a server with a pirated bot. Please buy or remove him.'
+          if (r < 0.3 && r > 0.2) m.content = 'I feel bad for being in a server with a pirated bot. Please buy or remove him.'
 
           const embed = new Discord.MessageEmbed()
             .setTitle('__Illegal bot!__')

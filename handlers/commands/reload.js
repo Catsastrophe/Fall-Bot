@@ -11,6 +11,7 @@ module.exports = {
     guildOnly: false,
     ownerOnly: true,
     description: 'reload commands',
+    category: "Owner",
     execute: async (message, args, client) => {
     if (!config.owners.includes(message.author.id)) return
             
@@ -30,6 +31,6 @@ module.exports = {
             }
         }
     
-      message.channel.send('Done')
+      message.channel.send('The Commands Have Been reloaded \n -Thanks Danik')
     }
 }

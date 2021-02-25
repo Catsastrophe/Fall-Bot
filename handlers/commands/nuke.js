@@ -6,8 +6,10 @@ const colors = require('../../conf/colors.json');
 module.exports = {
     name: 'nuke',
     aliases: ["n"],
-    guildOnly: false,
+    guildOnly: true,
     description: 'Nuke that crappy channel',
+    usage: "nuke [channel]",
+    category: "Moderation",
     execute: async (message, args) => {
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`You do not have the Presidents Permission to send a nuke!`)
 

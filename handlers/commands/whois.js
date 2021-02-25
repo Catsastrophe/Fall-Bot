@@ -4,8 +4,9 @@ const moment = require("moment")
 module.exports = {
     name: "whois",
     description: "Get stats of given person or yourself",
-    usage: "[whois <MENTION>]",
+    usage: "whois <MENTION>",
     aliases: ["whois", "user"],
+    category: "Moderation",
 
 execute: async function (message, args, client) {
 
