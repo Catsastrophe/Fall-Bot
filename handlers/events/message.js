@@ -3,6 +3,9 @@ const configs = require('../../conf/config.json')
 const command_handler = require('../../commands')
 const colors = require('../../conf/colors.json')
 const fs = require('fs')
+const xp = require('../handler/xp')
+
+var time = {}
 
 module.exports = {
     type: 'message',
@@ -34,6 +37,34 @@ ${m.content.trim()}\`\`\`
 
           return // Has to be here so the commands dont work
         }
+
+        if (message.author.bot) return
+        var r = Math.round(Math.random() * 1000)
+        // message.channel.send(r)
+
+        if ((r % 4) === 0) {
+          if (!time[message.author.id]) {
+            time[message.author.id] = Date.now()
+          }
+
+          if (Date.now() - (time[message.author.id]) < 15000) {
+            // message.channel.send('DEBUG: cant give xp wait') // DEBUG DEBUG DEBUG DEBUG
+            return
+          }
+
+
+          xp.addexp(message)
+          time[message.author.id] = Date.now()
+         // message.channel.send('DEBUG: XP added') // DEBUG DEBUG DEBUG DEBUG DEBUG
+        }
+
+       /* if (message.content.startsWith('!!!set')) {
+          obj['i'] = message.content.split(' ')[1]
+        }
+
+        if (message.content.startsWith('!!!get')) {
+          message.channel.send(obj['i'])
+        } */
 
         const prefix = configs.prefix
 

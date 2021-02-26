@@ -4,9 +4,16 @@ const fs = require('fs')
 module.exports = {
     name: "snipe",
     description: "Get the last message that was deleted",
+    aliases: ["snupe", "sn", "sp"],
     usage: "snipe",
+    category: "Moderation",
     execute: async (message, args, client) => {
     // hello dark "...... GASP"
+
+
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+        return message.reply("Missing Permissions!");
+    }
 
     var obj = JSON.parse(String(fs.readFileSync('./snipe.json')))
 

@@ -16,7 +16,8 @@ class Util {
   
   static getLevelxp(level) {
     // return 5 * Math.pow(level, 2) + 50 * level + 200;
-    return (Math.round((level * 200) - (200 / level))) || 100
+    if (((Math.round((level * 200) - (200 / level)) - level * 100) || 100) <= 0) return 25
+    return (Math.round((level * 200) - (200 / level)) - level * 100) || 100
   }
   
   static getInfo(exp) {
@@ -30,7 +31,7 @@ class Util {
     let toadd = Math.floor(Math.random() * 3 + 3);
     let oldxp = db.get(`xp_${message.author.id}_${message.guild.id}`)
     let oldlvl = Util.getLevel(oldxp)
-    let newxp = oldxp = toadd;
+    let newxp = oldxp + toadd;
     let newlvl = Util.getLevel(newxp);
     
     

@@ -2,6 +2,7 @@ const configs = require('../../conf/config.json');
 const command_handler = require('../../commands');
 const slash_command_handler = require('../../slash_commands');
 const Discord = require('discord.js');
+const colors = require('../../conf/colors.json');
 
 module.exports = {
     type: 'ready',
@@ -21,7 +22,8 @@ module.exports = {
             `How are you today?`,
             `Cats or Dogs?`,
             `Discord Is Watching You....`,
-            `Worship Cthulhu 6 times a day`
+            `Worship Cthulhu 6 times a day`,
+            `Serving ${client.guilds.cache.size} Servers`
         ]
     
         setInterval(() => {
@@ -29,7 +31,15 @@ module.exports = {
             client.user.setActivity(status, {
                 type: 'WATCHING'
             });
-        }, 30000)
+        }, 15000)
 
+          const upchannel = client.channels.cache.get('814718112296337439')
+  const upembed = new Discord.MessageEmbed()
+  .setThumbnail(client.user.avatarURL())
+  .setColor(colors.Emerald)
+  .setTitle("Bot restart Notification")
+  .setDescription("The Bot is back Online, Go back to using Fall Music! Or this is just a test Message tbh idk anymore")
+  upchannel.send(upembed)
+    
     }
 }

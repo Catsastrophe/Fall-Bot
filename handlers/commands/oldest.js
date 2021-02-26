@@ -12,7 +12,7 @@ module.exports = {
     const Embed = new MessageEmbed()
       .setTitle(`The oldest member in ${message.guild.name}`)
       .setColor(`RANDOM`)
-      .setFooter(`Date format: DD/MM/YYYY (the correct format ;) )`)
+      .setFooter(`Date format: DD/MM/YYYY`)
       .setDescription(
         `${mem.user.tag} is the oldest user in ${
           message.guild.name

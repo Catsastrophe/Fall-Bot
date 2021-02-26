@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'test',
+    name: 'darkerink',
     description: 'The test command',
     usage: "test",
     category: "Utility",
@@ -9,7 +9,7 @@ module.exports = {
 
         const msg = await message.channel.send('Thinking....');
 
-        msg.edit(`We are Not using the test command atm`);
+        msg.edit(`This is to test if it can read new commands`);
 
     }
 }
