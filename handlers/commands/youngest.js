@@ -5,6 +5,7 @@ module.exports = {
   category: "info",
   description: "Get the youngest account creation date in the guild!",
   execute: async (message, bot, args) => {
+    try {
     let mem = message.guild.members.cache
       .filter((m) => !m.user.bot)
       .sort((a, b) => b.user.createdAt - a.user.createdAt)
@@ -19,5 +20,11 @@ module.exports = {
         }! \n\nAccount creation date: ${formatDate(mem.user.createdAt)}`
       );
     message.channel.send(Embed);
-  },
+  }
+
+  catch (error) {
+console.log(error);
+message.reply(`Oh Nonono This is bad really Bad you got a error Please Dm **DarkerInk#6115** and Supply Him this error Below!! \n\nError: **${error}**`);
+    }
+  }
 };

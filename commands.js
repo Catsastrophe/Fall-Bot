@@ -28,13 +28,15 @@ module.exports = {
             command.execute(message, args, client);
         } catch (error) {
             console.error(error);
-
+            const ID = "814736327286194186";
+            const channel = client.channels.cache.get(ID);
+            if (!channel) return;
             const embed = new Discord.MessageEmbed()
                 .setTitle('A Problem Occured!')
                 .setColor(colors.errorColor)
                 .addField('Error:', error)
 
-            message.channel.send(embed);
+            channel.send(embed);
         }
     }
 }

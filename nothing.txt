@@ -1,40 +1,45 @@
+const configs = require('../../conf/config.json');
+const command_handler = require('../../commands');
+const slash_command_handler = require('../../slash_commands');
 const Discord = require('discord.js');
-const colors = require('./conf/colors.json');
-const fs = require('fs');
+const colors = require('../../conf/colors.json');
 
 module.exports = {
-    async initCommands(client) {
-        client.commands = new Discord.Collection();
+    type: 'ready',
+    async run(client) {
 
-        const commandFiles = (await fs.promises.readdir('./handlers/commands', { encoding: "utf-8" })).filter(file => file.endsWith('.js'));
+        console.log(`[API] Logged in as ${client.user.tag}: ` + '| version: ' + configs.version);
 
-        for (const file of commandFiles) {
-            const command = require(`./handlers/commands/${file}`);
-            try {
-                client.commands.set(command.name, command);
-            } catch (err) {
-                console.error(err);
-            }
-        }
-    },
-    async execute_command(commandName, message, args, client) {
+        command_handler.initCommands(client);
+        slash_command_handler.initSlashCommands(client);
+        let statuses = [
+            `${configs.prefix}help`,
+            `:3`,
+            `<3 Thanks for helping danik and linkel`,
+            `DarkerInk Is God`,
+            `Go To https://snowmusic.gq to get me!`,
+            `I am being coded on OwO`,
+            `How are you today?`,
+            `Cats or Dogs?`,
+            `Discord Is Watching You....`,
+            `Worship Cthulhu 6 times a day`,
+            `Serving ${client.guilds.cache.size} Servers`
+        ]
+    
+        setInterval(() => {
+            let status = statuses[Math.floor(Math.random() * statuses.length)]
+            client.user.setActivity(status, {
+                type: 'WATCHING'
+            });
+        }, 15000)
 
-        const command = client.commands.get(commandName) ||
-            client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-
-        if(!command) return;
-
-        try {
-            command.execute(message, args, client);
-        } catch (error) {
-            console.error(error);
-
-            const embed = new Discord.MessageEmbed()
-                .setTitle('A Problem Occured!')
-                .setColor(colors.errorColor)
-                .addField('Error:', error)
-
-            message.channel.send(embed);
-        }
+          const upchannel = client.channels.cache.get('814718112296337439')
+  const upembed = new Discord.MessageEmbed()
+  .setThumbnail(client.user.avatarURL())
+  .setColor(colors.Emerald)
+  .setTitle("Bot restart Notification")
+  .setDescription("The Bot is back Online, Go back to using Fall Music! Or this is just a test Message tbh idk anymore")
+  upchannel.send(upembed)
+    
     }
 }

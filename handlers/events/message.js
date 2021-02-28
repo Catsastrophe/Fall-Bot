@@ -74,6 +74,6 @@ ${m.content.trim()}\`\`\`
         const commandName = args.shift().toLowerCase();
 
         command_handler.execute_command(commandName, message, args, client);
-
+    
     }
 }

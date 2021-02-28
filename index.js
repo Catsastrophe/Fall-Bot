@@ -1,8 +1,18 @@
+const express = require('express')
+const app = express()
+const port = 3000
+app.get('/', (req, res) => res.send("EWWWWW its DarkerInk"))
+app.listen(port, () =>
+console.log(`Connected To:${port} So yea...`)
+)
 const Discord = require('discord.js');
 const configs = require('./conf/config.json');
 const event_handler = require('./event');
 const fs = require('fs');
 const fetch = require("node-fetch");
+const prefix = require('./conf/config.json');
+const db = require('quick.db')
+
 
 const client = new Discord.Client();
 
@@ -38,6 +48,47 @@ fetch(`https://api.affiliateplus.xyz/api/chatbot?message=${encodeURIComponent(me
       message.channel.stopTyping();
 }
 });
+
+client.on("guildCreate", guild => {
+
+  const { MessageEmbed } = require("discord.js");
+
+  const ID = "814736327286194186";
+
+  const channel = client.channels.cache.get(ID);
+
+  const sowner = guild.owner.user;
+
+  if (!channel) return;
+
+  const embed = new MessageEmbed()
+
+    .setTitle("**I Joined a Server!**")
+
+    .addField(`**SERVER NAME**`, `\`\`\`${guild.name}\`\`\``)
+
+    .addField(`**SERVER ID**`, `\`\`\`${guild.id}\`\`\``)
+
+    .addField(`**SERVER OWNER**`, `\`\`\`${sowner.tag}\`\`\``)
+
+    .addField(`**OWNER ID**`, `\`\`\`${sowner.id}\`\`\``)
+ 
+    .addField(`**CREATED ON**`, `\`\`\`${guild.createdAt}\`\`\``)
+  
+    .addField(`**MEMBERS**`, `\`\`\`${guild.memberCount}\`\`\``)
+
+     .addField(`**ROLES AMOUNT**`, `\`\`\`${message.guild.roles.cache.size}\`\`\``)
+  
+    .setTimestamp()
+
+    .setColor("32CD32")
+
+    .setFooter(`Servers Count - ${client.guilds.cache.size}`);
+
+  channel.send(embed);
+
+})
+  
 
 client.guilds.fetch('812514892921438238')
   .then(guild => console.log(guild.name))

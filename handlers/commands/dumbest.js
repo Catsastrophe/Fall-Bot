@@ -4,15 +4,18 @@ const config = require('../../conf/config.json');
 const fs = require('fs')
 
 module.exports = {
-    name: 'eval',
+    name: 'dumbest',
     guildOnly: false,
     ownerOnly: true,
-    description: 'reload commands UwU',
-    category: "Owner",
+    description: 'Find Out how the dumbest person Is',
+    aliases: ['dumb'],
+    category: "Fun",
   execute: async (message, agrs, client) => {
   const args = message.content.split(' ');
   const command = args.shift().toLowerCase();
-if (!config.owners.includes(message.author.id)) return
+if (!config.owners.includes(message.author.id)) {
+            return message.channel.send(`You are the Dumbest person XD`)
+        }
 if (!config.evalchanel.includes(message.channel.id)) return
     let evaled;
     try {
@@ -23,9 +26,7 @@ if (!config.evalchanel.includes(message.channel.id)) return
     
 catch (error) {
       console.log(error);
-      message.reply(`there was an error **${error}**`);
+      message.reply(`There was an error during evaluation, \n\n**${error}**`);
     }
-
-
   }
 };

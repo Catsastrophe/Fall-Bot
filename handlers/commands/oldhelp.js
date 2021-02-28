@@ -8,6 +8,7 @@ module.exports = {
     name: 'oldhelp',
     guildOnly: true,
     description: 'help command!',
+    category: "info",
     execute(message, args, client) {
       const embed = new Discord.MessageEmbed()
         .setTitle('HELP')

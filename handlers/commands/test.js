@@ -9,7 +9,7 @@ module.exports = {
 
         const msg = await message.channel.send('Thinking....');
 
-        msg.edit(`this is a test message 4`);
+        msg.edit(`this is a test message 5`);
 
     }
 }
