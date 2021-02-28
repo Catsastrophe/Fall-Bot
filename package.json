@@ -21,7 +21,10 @@
     "quick.db": "^7.1.3",
     "request-promise-native": "^1.0.9",
     "something-random-on-discord": "0.0.2",
-    "sourcebin_js": "0.0.3-ignore"
+    "sourcebin_js": "0.0.3-ignore",
+    "yt-search": "^2.7.3",
+    "ytdl-core": "^4.5.0",
+    "ytdl-core-discord": "^1.2.5"
   },
   "devDependencies": {},
   "scripts": {
