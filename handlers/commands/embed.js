@@ -13,7 +13,7 @@ module.exports = {
 const embed = new Discord.MessageEmbed()
   .setColor("RANDOM")
 
-  .setTitle("Embed from" + message.author.tag)
+  .setTitle("Embed from " + message.author.tag)
 
   .setDescription(dark)
 

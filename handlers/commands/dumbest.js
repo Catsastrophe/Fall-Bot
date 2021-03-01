@@ -1,32 +1,23 @@
+const Discord = require('discord.js');
 const { MessageEmbed } = require('discord.js');
-const { inspect } = require('util');
-const config = require('../../conf/config.json');
-const fs = require('fs')
+const ms = require("moment-duration-format");
 
 module.exports = {
-    name: 'dumbest',
-    guildOnly: false,
-    ownerOnly: true,
-    description: 'Find Out how the dumbest person Is',
-    aliases: ['dumb'],
-    category: "Fun",
-  execute: async (message, agrs, client) => {
-  const args = message.content.split(' ');
-  const command = args.shift().toLowerCase();
-if (!config.owners.includes(message.author.id)) {
-            return message.channel.send(`You are the Dumbest person XD`)
-        }
-if (!config.evalchanel.includes(message.channel.id)) return
-    let evaled;
-    try {
-      evaled = await eval(args.join(' '));
-      message.channel.send(inspect(evaled));
-      console.log(inspect(evaled));
-  }
-    
-catch (error) {
-      console.log(error);
-      message.reply(`There was an error during evaluation, \n\n**${error}**`);
+    name: 'dumb',
+    description: 'Get the ping of the Bot',
+    usage: "ping",
+    category: "Utility",
+    execute: async (message, args, client) => {
+try {
+      const pingMsg = await message.channel.send("Thinking.....");
+      const embed = new MessageEmbed()
+        .setTitle("**Pong**")
+        .setColor('RANDOM')
+        .addField('Had To remove it because someone was abusing it')
+        .setTimestamp()
+      pingMsg.edit({ embed });
+    } catch (err) {
+      return message.reply(`Oh no, an error occurred: \`${err.message}\`.`);
     }
   }
-};
+}

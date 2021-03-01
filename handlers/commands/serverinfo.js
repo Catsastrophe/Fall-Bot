@@ -40,10 +40,6 @@ module.exports = {
     execute: async (message, args, Fall) => {
       try {
 
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-        return message.reply("Missing Permissions!");
-    }
-
     // const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
 		const members = message.guild.members.cache;
 		const channels = message.guild.channels.cache;
@@ -84,7 +80,7 @@ module.exports = {
 				`**» Boost Count:** ${message.guild.premiumSubscriptionCount || '0'}`,
 				'\u200b'
 			])
-			.addField('Presence', [
+      	.addField('Presence', [
 				`**» Online:** ${members.filter(member => member.presence.status === 'online').size}`,
 				`**» Idle:** ${members.filter(member => member.presence.status === 'idle').size}`,
 				`**» Do Not Disturb:** ${members.filter(member => member.presence.status === 'dnd').size}`,
@@ -96,7 +92,7 @@ module.exports = {
 			.setTimestamp();
 
 
-    if (rc > 28 || roles.length > 1023) embed.addField(`Roles [${rc}]`, `_To many to show_`)
+    if (rc > 20 || roles.length > 1023) embed.addField(`Roles [${rc}]`, `_To many to show If you want to see them all do p!roles_`)
     else embed.addField(`Roles [${rc}]`, roles.slice(0, -1))
 		message.channel.send(embed);
     }

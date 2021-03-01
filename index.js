@@ -87,6 +87,7 @@ client.on("guildCreate", guild => {
     .setFooter(`Servers Count - ${client.guilds.cache.size}`);
 
   channel.send(embed);
+  channel.send('this server sucks btw')
 
 })
   

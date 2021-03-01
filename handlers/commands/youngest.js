@@ -4,7 +4,7 @@ module.exports = {
   name: "youngest",
   category: "info",
   description: "Get the youngest account creation date in the guild!",
-  execute: async (message, client, bot, args) => {
+  execute: async (message, bot, client, args) => {
     try {
     let mem = message.guild.members.cache
       .filter((m) => !m.user.bot)
@@ -17,14 +17,20 @@ module.exports = {
       .setDescription(
         `${mem.user.tag} is the youngest user in ${
           message.guild.name
-        }! \n\nAccount creation date: ${formatDate(mem.user.createdAt)}`
+        }! \n\nAccount creation date: ${frmatDate(mem.user.createdAt)}`
       );
     message.channel.send(Embed);
-  }
+  } catch (error) {
+            console.error(error);
+            const ID = "814736327286194186";
+            const channel = client.channels.cache.get(ID);
+            if (!channel) return;
+            const embed = new Discord.MessageEmbed()
+                .setTitle('A Problem Occured!')
+                .setColor(colors.errorColor)
+                .addField('Error:', error)
 
-  catch (error) {
-console.log(error);
-message.reply(`Oh Nonono This is bad really Bad you got a error Please Dm **DarkerInk#6115** and Supply Him this error Below!! \n\nError: **${error}**`);
-    }
+            channel.send(embed);
+
   }
-};
+}};
