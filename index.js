@@ -18,6 +18,7 @@ const client = new Discord.Client();
 
 event_handler.performEvents(client);
 
+
 client.login(process.env.TOKEN)
 
 client.on('message', message => {
@@ -36,7 +37,7 @@ if (message.channel.name == "chatbot") {
 if (message.author.bot) return;
 message.content = message.content.replace(/@(everyone)/gi, "everyone").replace(/@(here)/gi, "here");
 if (message.content.includes(`@`)) {
-return message.channel.send(`**:x: Please dont mention anyone**`);
+return message.channel.send(`**Do Not Ping people please!**`);
  }
   message.channel.startTyping();
 if (!message.content) return message.channel.send("Please say something.");

@@ -3,14 +3,12 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'gn',
     asliases: [],
-    description: 'gn',
-    usage: "ping",
-    category: "Utility",
+    description: 'It tells you good Night',
+    usage: "gn",
+    category: "Fun",
     async execute(message, args) {
 
-        const msg = await message.channel.send('Typing...');
-
-        msg.edit(`Good Night`);
+        message.reply(`Good Night`);
 
     }
 }

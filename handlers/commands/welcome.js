@@ -1,4 +1,5 @@
 const discord = require("discord.js");
+const config = require('../../conf/config.json');
 
 module.exports = {
     name: "welcome",
@@ -10,6 +11,7 @@ module.exports = {
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
       return message.channel.send("I can't welcome them do to not being able to add a welcomed role");
     } 
+
     const user = message.mentions.members.first()
     
     if(!user) {
@@ -40,4 +42,4 @@ module.exports = {
     user.roles.add(myrole);
     message.channel.send(embed)
     }
-  }
+  };

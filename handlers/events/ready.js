@@ -23,7 +23,14 @@ module.exports = {
             `Cats or Dogs?`,
             `Discord Is Watching You....`,
             `Worship Cthulhu 6 times a day`,
-            `Serving ${client.guilds.cache.size} Servers`
+            `Serving ${client.guilds.cache.size} Servers`,
+            `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Users`,
+            `I said I would catch you if you fall`,
+            `DarkerInk Is in a sad place`,
+            `Please help him`,
+            `The time is soon`,
+            `....`,
+            `........`
         ]
     
         setInterval(() => {
@@ -38,7 +45,7 @@ module.exports = {
   .setThumbnail(client.user.avatarURL())
   .setColor(colors.Emerald)
   .setTitle("Bot restart Notification")
-  .setDescription("The Bot is back Online, Go back to using Fall Music! Or this is just a test Message tbh idk anymore")
+  .setDescription("The Bot Crashed Or I restarted Please Do not worry The Owner's will look into this as soon as possible if I keep crashing ping one of the owners/devs")
   upchannel.send(upembed)
     
     }

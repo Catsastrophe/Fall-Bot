@@ -6,7 +6,7 @@ module.exports = {
   name: "math",
   description: "Get a answer on A Math problem",
   usage: "math <mathproblem>",
-  category: "Fun",
+  category: "Utility",
   execute: async (message, args, client) => {
     try {
       if (!args[0]) return message.channel.send("Please Give Me Equation!");

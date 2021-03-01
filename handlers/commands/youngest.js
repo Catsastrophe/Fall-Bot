@@ -4,7 +4,7 @@ module.exports = {
   name: "youngest",
   category: "info",
   description: "Get the youngest account creation date in the guild!",
-  execute: async (message, bot, args) => {
+  execute: async (message, client, bot, args) => {
     try {
     let mem = message.guild.members.cache
       .filter((m) => !m.user.bot)

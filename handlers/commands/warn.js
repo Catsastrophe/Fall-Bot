@@ -27,7 +27,7 @@ module.exports = {
     }
     
     if(user.id === message.guild.owner.id) {
-      return message.channel.send("Try to warn the owner...? He made this server HE MADE ME!... well atleast DarkerInk did soooo")
+      return message.channel.send("Try to warn the owner...? He made this server!")
     }
     
     const reason = args.slice(1).join(" ")

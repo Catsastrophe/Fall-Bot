@@ -10,6 +10,7 @@ module.exports = {
     usage: "say <message>",
     category: "Fun",
     execute: async (message, args) => {
+    const embed = new Discord.MessageEmbed()
         message.delete()
 
         if (!message.member.hasPermission('MANAGE_MESSAGES'))

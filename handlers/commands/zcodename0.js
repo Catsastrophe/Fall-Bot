@@ -1,11 +1,11 @@
 const config = require('../../conf/config.json');
 
 module.exports = {
-    name: "CodeName0",
-    category: "Owner",
+    name: "zcodename0",
     description: 'This Command Is only Useable By DarkerInk Not even The other Owner can use it',
     usage: "Its Not thought of....",
     aliases: ["codename0"],
+        category: "CoreInfo",
     execute: async (message, args, client) => {
         if (!config.code0.includes(message.author.id)) {
             return message.channel.send(`Its Not Time Yet`)

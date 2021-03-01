@@ -13,6 +13,7 @@ module.exports = {
     description: 'Load new commands',
     category: "Owner",
     execute: async (message, args, client) => {
+      try {
     if (!config.owners.includes(message.author.id)) {
             return message.channel.send(`lmao are you the Owner? No So why are you trying to use this command...? <:thonking:814600683458265090>`)
         }
@@ -35,4 +36,7 @@ module.exports = {
     
       message.channel.send('New commands Have been added')
     }
+    catch (error) {
+      message.reply(`There was an error when loading the new commands, \n\n**${error}**`);
+    }}
 }

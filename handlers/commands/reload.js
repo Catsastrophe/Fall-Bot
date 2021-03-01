@@ -15,6 +15,7 @@ module.exports = {
     usage: "reload <command>",
     category: "Owner",
     execute: async (message, args, client) => {
+      try {
       if (!config.owners.includes(message.author.id)) {
             return message.channel.send(`lmao are you the Owner? No So why are you trying to use this command...? <:thonking:814600683458265090>`)
         }
@@ -32,6 +33,10 @@ module.exports = {
   const props = require(`./${commandName}.js`);
   client.commands.set(commandName, props);
   message.reply(`The command ${commandName} has been reloaded`);
+    }
+    catch (error) {
+      message.reply(`There was an error when reloading the commands, \n\n**${error}**`);
+}
     }
 }
 //I AM HAPPY 

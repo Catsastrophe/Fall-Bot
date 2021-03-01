@@ -1,4 +1,3 @@
-
 const Discord = require('discord.js');
 const {
     prefix
@@ -7,7 +6,7 @@ const colors = require('../../conf/colors.json');
 module.exports = {
     name: 'oldhelp',
     guildOnly: true,
-    description: 'help command!',
+    description: 'The old help command!',
     category: "info",
     execute(message, args, client) {
       const embed = new Discord.MessageEmbed()
