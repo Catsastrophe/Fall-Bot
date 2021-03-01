@@ -4,7 +4,7 @@ const ms = require("moment-duration-format");
 
 module.exports = {
     name: 'dumb',
-    description: 'Get the ping of the Bot',
+    description: 'get the dumbest user',
     usage: "ping",
     category: "Utility",
     execute: async (message, args, client) => {
@@ -13,7 +13,7 @@ try {
       const embed = new MessageEmbed()
         .setTitle("**Pong**")
         .setColor('RANDOM')
-        .addField('Had To remove it because someone was abusing it')
+        .addField('Had To remove it because someone was abusing it Danik Stop Abusing It and Using the token to sign in for fuck sakes')
         .setTimestamp()
       pingMsg.edit({ embed });
     } catch (err) {
