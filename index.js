@@ -12,6 +12,7 @@ const fs = require('fs');
 const fetch = require("node-fetch");
 const prefix = require('./conf/config.json');
 const db = require('quick.db')
+require("./ExtendedMessage");
 
 
 const client = new Discord.Client();
@@ -37,14 +38,14 @@ if (message.channel.name == "chatbot") {
 if (message.author.bot) return;
 message.content = message.content.replace(/@(everyone)/gi, "everyone").replace(/@(here)/gi, "here");
 if (message.content.includes(`@`)) {
-return message.channel.send(`**Do Not Ping people please!**`);
+return message.inlineReply(`**Do Not Ping people please!**`);
  }
   message.channel.startTyping();
-if (!message.content) return message.channel.send("Please say something.");
+if (!message.content) return message.inlineReply("Please say something.");
 fetch(`https://api.affiliateplus.xyz/api/chatbot?message=${encodeURIComponent(message.content)}&botname=${client.user.username}&ownername=DarkerInk#6115&gender=Male`)
     .then(res => res.json())
     .then(data => {
-        message.channel.send(`> ${message.content} \n <@${message.author.id}> ${data.message}`);
+        message.inlineReply(`${data.message}`);
     });
       message.channel.stopTyping();
 }
@@ -78,6 +79,8 @@ client.on("guildCreate", guild => {
   
     .addField(`**MEMBERS**`, `\`\`\`${guild.memberCount}\`\`\``)
 
+    .addField(`**BOTS**`, `\`\`\`${message.guild.members.cache.filter(m => m.user.bot).size}\`\`\``)
+
      .addField(`**ROLES AMOUNT**`, `\`\`\`${message.guild.roles.cache.size}\`\`\``)
   
     .setTimestamp()
@@ -87,10 +90,16 @@ client.on("guildCreate", guild => {
     .setFooter(`Servers Count - ${client.guilds.cache.size}`);
 
   channel.send(embed);
-  channel.send('this server sucks btw')
 
 })
   
+
+  client.on("message", msg => {
+    if (msg.author.bot) return;
+    if (msg.content === "DarkerInk Hi Hi Hello No") {
+        msg.inlineReply(`Hello User This is a InlineReply YAY DarkerInk Made this kind of lul`);
+    }
+});
 
 client.guilds.fetch('812514892921438238')
   .then(guild => console.log(guild.name))

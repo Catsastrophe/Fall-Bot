@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 const moment = require("moment")
+const { getMember } = require("../../functions.js");
 
 module.exports = {
     name: "whois",
@@ -17,8 +18,6 @@ execute: async function (message, args, client) {
       user = message.member;
     } else {
 
-
-   
 
 
       user = message.mentions.members.first() || await message.guild.members.fetch(args[0]).catch(err => { return message.channel.send(":x: Unable to find this Person") })
@@ -79,6 +78,12 @@ execute: async function (message, args, client) {
       //OTHER STUFF 
       embed.setAuthor(user.user.tag, user.user.displayAvatarURL({ dynamic: true }))
 
+const member = getMember(message, args.join(" "));
+
+    const roles = member.roles.cache
+            .filter(r => r.id !== message.guild.id)
+            .map(r => r).join(", ") || 'none';
+
       //CHECK IF USER HAVE NICKNAME
       if (user.nickname !== null) embed.addField("Nickname", user.nickname)
       embed.addField("Joined At", moment(user.joinedAt).format("LLLL"))
@@ -86,17 +91,8 @@ execute: async function (message, args, client) {
         .addField("Common Information", `ID: \`${user.user.id}\`\nDiscriminator: ${user.user.discriminator}\nBot: ${user.user.bot}\nDeleted User: ${user.deleted}`)
         .addField("Badges", newbadges.join(", ").toLowerCase() || "None")
         .setFooter(user.user.presence.status, stat[user.user.presence.status])
+        .addField('**Roles:**', ` ${roles}`, true)
 
-
-
-      return message.channel.send(embed).catch(err => {
-        return message.channel.send("Error : " + err)
-      })
-
-
-
+      message.channel.send(embed);
     }
-
-
-
   }

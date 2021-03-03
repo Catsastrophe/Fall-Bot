@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const { MessageEmbed } = require('discord.js');
 const ms = require("moment-duration-format");
+require("../../ExtendedMessage");
 
 module.exports = {
     name: 'ping',
@@ -10,7 +11,7 @@ module.exports = {
     category: "Utility",
     execute: async (message, args, client) => {
 try {
-      const pingMsg = await message.channel.send("Ping....");
+      const pingMsg = await message.inlineReply("Ping....");
       const embed = new MessageEmbed()
         .setTitle("**Pong**")
         .setColor('RANDOM')
@@ -19,7 +20,7 @@ try {
         .setTimestamp()
       pingMsg.edit({ embed });
     } catch (err) {
-      return message.reply(`Oh no, an error occurred: \`${err.message}\`.`);
+      return message.inlineReply(`Oh no, an error occurred: \`${err.message}\`.`);
     }
   }
 }

@@ -92,7 +92,7 @@ module.exports = {
 			.setTimestamp();
 
 
-    if (rc > 20 || roles.length > 1023) embed.addField(`Roles [${rc}]`, `_To many to show If you want to see them all do p!roles_`)
+    if (rc > 30 || roles.length > 1023) embed.addField(`Roles [${rc}]`, `_To many to show If you want to see them all do p!roles_`)
     else embed.addField(`Roles [${rc}]`, roles.slice(0, -1))
 		message.channel.send(embed);
     }
