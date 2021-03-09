@@ -17,7 +17,6 @@ module.exports = {
             `:3`,
             `<3 Thanks for helping danik and linkel`,
             `DarkerInk Is God`,
-            `Go To https://snowmusic.gq to get me!`,
             `I am being coded on OwO`,
             `How are you today?`,
             `Cats or Dogs?`,
