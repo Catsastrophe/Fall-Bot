@@ -10,7 +10,7 @@ var time = {}
 module.exports = {
     type: 'message',
     run: async (client, message) => {
-        if (message.author.id === client.user.id) return
+       // if (message.author.id === client.user.id) return
 
         premium = JSON.parse(String(fs.readFileSync('premium.json')))
 
@@ -38,7 +38,7 @@ ${m.content.trim()}\`\`\`
           return // Has to be here so the commands dont work
         }
 
-        if (message.author.bot) return
+       // if (message.author.bot) return
         var r = Math.round(Math.random() * 1000)
         // message.channel.send(r)
 
@@ -68,7 +68,7 @@ ${m.content.trim()}\`\`\`
 
         const prefix = configs.prefix
 
-        if(!message.content.startsWith(prefix) || message.author.bot) return;
+      //  if(!message.content.startsWith(prefix) || message.author.bot) return;
 
         const args = message.content.slice(prefix.length).split(' ');
         const commandName = args.shift().toLowerCase();

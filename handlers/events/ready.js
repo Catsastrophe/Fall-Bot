@@ -36,6 +36,6 @@ module.exports = {
                 type: 'WATCHING'
             });
         }, 15000)
-    
+
     }
 }
