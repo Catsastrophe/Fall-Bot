@@ -4,7 +4,7 @@ const config = require('../../conf/config.json');
 const fs = require('fs')
 
 module.exports = {
-    name: 'dumbest',
+    name: 'eval',
     guildOnly: false,
     ownerOnly: true,
     description: 'Find Out how the dumbest person Is',
@@ -13,7 +13,7 @@ module.exports = {
   const args = message.content.split(' ');
   const command = args.shift().toLowerCase();
 if (!config.owners.includes(message.author.id)) {
-            return message.channel.send(`No Danik Just Stop Agree To the things I asked then you can use this command again Read What I asked In <#812415408694624327>`)
+            return message.channel.send(`You can\'t use this`)
         }
 if (!config.evalchanel.includes(message.channel.id)) return
     let evaled;
