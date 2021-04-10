@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
-const configs = require('../../conf/config.json');
+const configs = require('../../../conf/config.json');
 const Discord = require('discord.js');
-const color = require('../../conf/colors.json');
+const color = require('../../../conf/colors.json');
 
 module.exports = {
     name: 'version',

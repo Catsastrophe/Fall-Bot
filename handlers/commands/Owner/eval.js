@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { inspect } = require('util');
-const config = require('../../conf/config.json');
+const config = require('../../../conf/config.json');
 const fs = require('fs')
 
 module.exports = {
@@ -15,7 +15,6 @@ module.exports = {
 if (!config.owners.includes(message.author.id)) {
             return message.channel.send(`You can\'t use this`)
         }
-if (!config.evalchanel.includes(message.channel.id)) return
     let evaled;
     try {
       evaled = await eval(args.join(' '));

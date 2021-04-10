@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const { prefix } = require('../../conf/config.json')
-const colors = require('../../conf/colors.json')
+const { prefix } = require('../../../conf/config.json')
+const colors = require('../../../conf/colors.json')
 const gis = require('g-i-s')
 
 const nsfw_array = [

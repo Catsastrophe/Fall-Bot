@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 const moment = require("moment")
-const { getMember } = require("../../functions.js");
+const { getMember } = require("../../../functions.js");
 
 module.exports = {
     name: "whois",

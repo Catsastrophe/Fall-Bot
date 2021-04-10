@@ -1,4 +1,4 @@
-const { formatDate } = require("../../info");
+const { formatDate } = require("../../../info");
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "oldest",

@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const { MessageEmbed } = require('discord.js');
 const ms = require("moment-duration-format");
-require("../../ExtendedMessage");
+require("../../../ExtendedMessage");
 
 module.exports = {
     name: 'ping',

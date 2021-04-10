@@ -6,6 +6,7 @@
   "dependencies": {
     "@k3rn31p4nic/google-translate-api": "^1.1.1",
     "canvacord": "^5.1.0",
+    "colors": "^1.4.0",
     "common-tags": "^1.8.0",
     "conf": "^9.0.2",
     "cpu-stat": "^2.0.1",

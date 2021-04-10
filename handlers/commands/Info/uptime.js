@@ -2,8 +2,8 @@ const { MessageEmbed } = require("discord.js");
 const Discord = require('discord.js');
 const {
     prefix
-} = require('../../conf/config.json');
-const colors = require('../../conf/colors.json');
+} = require('../../../conf/config.json');
+const colors = require('../../../conf/colors.json');
 module.exports = {
     name: 'uptime',
     guildOnly: false,

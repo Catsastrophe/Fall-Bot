@@ -1,5 +1,4 @@
 const configs = require('../../conf/config.json');
-const command_handler = require('../../commands');
 const slash_command_handler = require('../../slash_commands');
 const Discord = require('discord.js');
 const colors = require('../../conf/colors.json');
@@ -10,7 +9,6 @@ module.exports = {
 
         console.log(`[API] Logged in as ${client.user.tag}: ` + '| version: ' + configs.version);
 
-        command_handler.initCommands(client);
         slash_command_handler.initSlashCommands(client);
         let statuses = [
             `${configs.prefix}help`,
@@ -38,14 +36,6 @@ module.exports = {
                 type: 'WATCHING'
             });
         }, 15000)
-
-          const upchannel = client.channels.cache.get('814718112296337439')
-  const upembed = new Discord.MessageEmbed()
-  .setThumbnail(client.user.avatarURL())
-  .setColor(colors.Emerald)
-  .setTitle("Bot restart Notification")
-  .setDescription("The Bot Crashed Or I restarted Please Do not worry The Owner's will look into this as soon as possible if I keep crashing ping one of the owners/devs")
-  upchannel.send(upembed)
     
     }
 }

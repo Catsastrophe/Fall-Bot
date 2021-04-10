@@ -2,9 +2,9 @@ const Discord = require('discord.js');
 const fs = require('fs')
 const {
     prefix
-} = require('../../conf/config.json');
-const colors = require('../../conf/colors.json');
-const config = require('../../conf/config.json');
+} = require('../../../conf/config.json');
+const colors = require('../../../conf/colors.json');
+const config = require('../../../conf/config.json');
 
 module.exports = {
     name: 'loadnew',

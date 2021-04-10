@@ -1,4 +1,4 @@
-const catFacts = require('../../json/cat-fact.json');
+const catFacts = require('../../../json/cat-fact.json');
 const { MessageEmbed } = require('discord.js');
 
 module.exports = {

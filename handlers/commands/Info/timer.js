@@ -1,6 +1,6 @@
 const ms = require("ms");
 const { MessageEmbed } = require("discord.js");
-const { Timers } = require("../../math");
+const { Timers } = require("../../../math");
 module.exports = {
   name: "timer",
   description: "Set a timer for your self!",

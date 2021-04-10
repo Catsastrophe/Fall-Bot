@@ -1,5 +1,5 @@
 const db = require('quick.db')
-const { getInfo } = require("../handler/xp.js")
+const { getInfo } = require("../../handler/xp.js")
 const canvacord = require("canvacord");
 const Discord = require("discord.js");
 module.exports = {

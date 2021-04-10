@@ -1,4 +1,4 @@
-const config = require('../../conf/config.json');
+const config = require('../../../conf/config.json');
 
 module.exports = {
     name: 'reboot',

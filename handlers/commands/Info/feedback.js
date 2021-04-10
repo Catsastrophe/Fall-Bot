@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const configs = require('../../conf/config.json');
+const configs = require('../../../conf/config.json');
 const { FEEDBACK_EMOJI_ID } = process.env;
 
 module.exports = {

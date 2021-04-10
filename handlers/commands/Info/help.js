@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const configs = require('../../conf/config.json');
+const configs = require('../../../conf/config.json');
 module.exports = {
     name: 'help',
     guildOnly: false,
