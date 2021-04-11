@@ -30,7 +30,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified",
+    "test": "node test.js",
     "start": "node index.js"
   },
   "author": "DarkerInk",
