@@ -39,7 +39,6 @@ for (const file of commandFiles) {
   }
 
   client.commands.set(command.name, command);
-  //  console.log(colors.red(`❌ failed Loading ${command.name} Stolen Code`))
   console.log(colors.green(`✅  Success! Loaded Command ${command.name} `));
 }
 
