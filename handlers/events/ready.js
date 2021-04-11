@@ -11,23 +11,10 @@ module.exports = {
 
         slash_command_handler.initSlashCommands(client);
         let statuses = [
-            `${configs.prefix}help`,
+            `Hello From the otherside`,
             `:3`,
-            `<3 Thanks for helping danik and linkel`,
-            `DarkerInk Is God`,
-            `I am being coded on OwO`,
-            `How are you today?`,
-            `Cats or Dogs?`,
-            `Discord Is Watching You....`,
-            `Worship Cthulhu 6 times a day`,
-            `Serving ${client.guilds.cache.size} Servers`,
-            `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Users`,
-            `I said I would catch you if you fall`,
-            `DarkerInk Is in a sad place`,
-            `Please help him`,
-            `The time is soon`,
-            `....`,
-            `........`
+            `This is a premium Bot`,
+            `DarkerInk Is God`
         ]
     
         setInterval(() => {
