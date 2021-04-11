@@ -1,10 +1,3 @@
-const express = require('express')
-const app = express()
-const port = 3000
-app.get('/', (req, res) => res.send("EWWWWW its DarkerInk"))
-app.listen(port, () =>
-console.log(`Connected To:${port} So yea...`)
-)
 const Discord = require('discord.js');
 const configs = require('./conf/config.json');
 const event_handler = require('./event');
