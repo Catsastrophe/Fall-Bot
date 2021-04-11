@@ -10,7 +10,7 @@ var time = {}
 module.exports = {
     type: 'message',
     run: async (client, message) => {
-       // if (message.author.id === client.user.id) return
+        if (message.author.id === client.user.id) return
 
         premium = JSON.parse(String(fs.readFileSync('premium.json')))
 
@@ -35,12 +35,10 @@ ${m.content.trim()}\`\`\`
           m.channel.send(embed)
           
 
-          return // Has to be here so the commands dont work
+          return 
         }
 
-       // if (message.author.bot) return
         var r = Math.round(Math.random() * 1000)
-        // message.channel.send(r)
 
         if ((r % 4) === 0) {
           if (!time[message.author.id]) {
@@ -48,27 +46,17 @@ ${m.content.trim()}\`\`\`
           }
 
           if (Date.now() - (time[message.author.id]) < 15000) {
-            // message.channel.send('DEBUG: cant give xp wait') // DEBUG DEBUG DEBUG DEBUG
             return
           }
 
 
           xp.addexp(message)
           time[message.author.id] = Date.now()
-         // message.channel.send('DEBUG: XP added') // DEBUG DEBUG DEBUG DEBUG DEBUG
         }
-
-       /* if (message.content.startsWith('!!!set')) {
-          obj['i'] = message.content.split(' ')[1]
-        }
-
-        if (message.content.startsWith('!!!get')) {
-          message.channel.send(obj['i'])
-        } */
 
         const prefix = configs.prefix
 
-      //  if(!message.content.startsWith(prefix) || message.author.bot) return;
+        if(!message.content.startsWith(prefix) || message.author.bot) return;
 
         const args = message.content.slice(prefix.length).split(' ');
         const commandName = args.shift().toLowerCase();
