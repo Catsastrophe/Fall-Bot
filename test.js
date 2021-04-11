@@ -29,5 +29,4 @@ for (const file of commandFiles) {
   console.log(colors.green(`✅  Success! Command: ${command.name} Is Working!`));
 }
 
-client.login(process.env.TOKEN);
 console.log('The Bot has Logged In and Works')
