@@ -30,3 +30,5 @@ for (const file of commandFiles) {
 }
 
 console.log('The Bot has Logged In and Works')
+
+return process.exit(0)
