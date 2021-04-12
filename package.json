@@ -37,10 +37,10 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DarkTheif/New-Music-Bot.git"
+    "url": "git+https://github.com/Darker-Ink/Fall-Bot.git"
   },
   "bugs": {
-    "url": "https://github.com/DarkTheif/New-Music-Bot/issues"
+    "url": "https://github.com/Darker-Ink/Fall-Bot/issues"
   },
-  "homepage": "https://github.com/DarkTheif/New-Music-Bot#readme"
+  "homepage": "https://github.com/Darker-Ink/Fall-Bot"
 }
