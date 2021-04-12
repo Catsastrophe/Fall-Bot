@@ -11,7 +11,7 @@ const {
 
 module.exports = {
     name: 'leaveguild',
-    description: 'Load new commands',
+    description: 'Leave a Guild',
     category: "Owner",
     execute: async (message, client, args) => {
         if (!config.owners.includes(message.author.id)) {
