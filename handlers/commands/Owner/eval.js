@@ -9,8 +9,8 @@ const fs = require('fs')
 
 module.exports = {
     name: 'eval',
-    description: 'Find Out how the dumbest person Is',
-    category: "Fun",
+    description: '',
+    category: "Owner",
     execute: async (message, agrs, client) => {
         const args = message.content.split(' ');
         const command = args.shift().toLowerCase();
