@@ -13,3 +13,13 @@ _Requires [Node.js](https://nodejs.org) v12 or higher_
 **5.** Run `npm start` to start the bot
 
 **6.** Ensure the highest role the bot has is higher than others so it can remove their roles
+
+
+# License
+This uses the [MIT License](https://github.com/Darker-Ink/Fall-Bot/blob/master/LICENSE)
+
+# Credits
+
+[danik](https://github.com/danik4985) While I don't respect how he thinks for somethings I still Have to credit him, He Did help with this project
+
+[DarkerInk](https://github.com/Darker-Ink) Me!
