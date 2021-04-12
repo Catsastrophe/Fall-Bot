@@ -1,4 +1,6 @@
-const { MessageEmbed } = require("discord.js");
+const {
+    MessageEmbed
+} = require("discord.js");
 
 module.exports = {
     name: "invite",
@@ -6,17 +8,16 @@ module.exports = {
     usage: "invite",
     aliases: ["inv"],
     category: "Utility",
-
-  execute: async function (message, args, client) {
     
-    //set the permissions id here (https://discordapi.com/permissions.html)
-    var permissions = 8;
-    
-    let invite = new MessageEmbed()
-    .setTitle(`Invite ${client.user.username}`)
-    .setDescription(`Want me in your server? Invite me today! \n\n [Invite Link](https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=${permissions}&scope=bot)`)
-    .setURL(`https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=${permissions}&scope=bot`)
-    .setColor("BLUE")
-    return message.channel.send(invite);
-  },
+    execute: async function(message, args, client) {
+        
+        var permissions = 8;
+        
+        let invite = new MessageEmbed()
+            .setTitle(`Invite ${client.user.username}`)
+            .setDescription(`Want me in your server? Invite me today! \n\n [Invite Link](https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=${permissions}&scope=bot)`)
+            .setURL(`https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=${permissions}&scope=bot`)
+            .setColor("BLUE")
+        return message.channel.send(invite);
+    },
 };
