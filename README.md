@@ -31,6 +31,7 @@ This uses the [MIT License](https://github.com/Darker-Ink/Fall-Bot/blob/master/L
 
 [DarkerInk](https://github.com/Darker-Ink) Me!
 
+### contributors
 <a href="https://github.com/Darker-Ink/Fall-Bot/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=Darker-Ink/Fall-Bot" />
 </a>
