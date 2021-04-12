@@ -29,6 +29,6 @@ for (const file of commandFiles) {
   console.log(colors.green(`✅  Success! Command: ${command.name} Is Working!`));
 }
 
-console.log('The Bot has Logged In and Works')
+console.log('All The Commands Work and the bot is ready to go!')
 
 return process.exit(0)
