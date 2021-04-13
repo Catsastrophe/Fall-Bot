@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
-const { inspect } = require('util');
+const {
+    inspect
+} = require('util');
 const fs = require('fs')
 const {
     prefix
@@ -9,34 +11,30 @@ const config = require('../../../conf/config.json');
 
 module.exports = {
     name: 'reload',
-    guildOnly: false,
-    ownerOnly: true,
-    description: 'Reload the commands',
+    description: 'Reload the commands (I am Not sure if this will work or not)',
     usage: "reload <command>",
     category: "Owner",
     execute: async (message, args, client) => {
-      try {
-      if (!config.owners.includes(message.author.id)) {
-            return message.channel.send(`lmao are you the Owner? No So why are you trying to use this command...? <:thonking:814600683458265090>`)
+        const commandName = args[0].toLowerCase();
+        const command = message.client.commands.get(commandName) ||
+            message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+        
+        if (!command) {
+            return message.channel.send(`There is no command with name or alias \`${commandName}\`, ${message.author}!`);
         }
-    if(!args || args.size < 1) return message.reply("Must provide a command name to reload.");
-  const commandName = args[0];
-  // OMG
-  if(!client.commands.has(commandName)) {
-    return message.reply("That command does not exist");
-  }
-
-  // IT WORKS
-  delete require.cache[require.resolve(`./${commandName}.js`)];
-  // YESSSSS
-  client.commands.delete(commandName);
-  const props = require(`./${commandName}.js`);
-  client.commands.set(commandName, props);
-  message.reply(`The command ${commandName} has been reloaded`);
-    }
-    catch (error) {
-      message.reply(`There was an error when reloading the commands, \n\n**${error}**`);
-}
-    }
-}
-//I AM HAPPY 
+        
+        const commandFolders = fs.readdirSync('./commands');
+        const folderName = commandFolders.find(folder => fs.readdirSync(`./commands/${folder}`).includes(`${commandName}.js`));
+        
+        delete require.cache[require.resolve(`../${folderName}/${command.name}.js`)];
+        
+        try {
+            const newCommand = require(`../${folderName}/${command.name}.js`);
+            message.client.commands.set(newCommand.name, newCommand);
+            message.channel.send(`Command \`${command.name}\` was reloaded!`);
+        } catch (error) {
+            console.error(error);
+            message.channel.send(`There was an error while reloading a command \`${command.name}\`:\n\`${error.message}\``);
+        }
+    },
+};
