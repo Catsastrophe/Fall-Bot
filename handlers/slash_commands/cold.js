@@ -2,16 +2,16 @@ const Discord = require('discord.js');
 const Utils = require('../../slash_utils.js')
 
 module.exports = {
-    name: 'ping',
-    description: 'Pong!',
+    name: 'cold',
+    description: 'info!',
     options: [{
-        "name": "test",
-        "description": "tesssst",
+        "name": "cold",
+        "description": "info",
         "type": 3
     }],
     async run(int, args, client) {
         
-        Utils.respond(int, "Ping", client)
+        Utils.respond(int, "I'm Not even 19 yet and I already wasted my life \n- Darkerink", client)
         
     }
 }
