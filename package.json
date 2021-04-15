@@ -34,7 +34,7 @@
     "start": "node index.js"
   },
   "author": "DarkerInk",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Darker-Ink/Fall-Bot.git"
