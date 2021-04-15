@@ -1,7 +1,7 @@
 {
-  "name": "dark-snow-music",
+  "name": "Fall-Bat",
   "version": "1.4.6",
-  "description": "This Music bot is made by darkerink because my old bot sucked",
+  "description": "This is a premium Discord bot you can Use",
   "main": "index.js",
   "dependencies": {
     "@k3rn31p4nic/google-translate-api": "^1.1.1",
