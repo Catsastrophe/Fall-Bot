@@ -39,7 +39,7 @@ for (const file of commandFiles) {
     }
     
     client.commands.set(command.name, command);
-    console.log(colors.green(`✅  Success! Loaded Command ${command.name} `));
+    console.log(colors.green(`✅  Success! Loaded Command ${command.name}`));
 }
 
 client.on('message', message => {
