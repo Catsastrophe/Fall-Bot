@@ -11,7 +11,7 @@ module.exports = {
     guildOnly: true,
     description: 'Give us some feedback',
     usage: "FeedBack <message>",
-    category: "CoreInfo",
+    category: "info",
     execute: async (message, args, client) => {
         
         try {

@@ -11,7 +11,7 @@ module.exports = {
     description: "Get stats of given person or yourself",
     usage: "whois <MENTION>",
     aliases: ["whois", "user"],
-    category: "Moderation",
+    category: "Utility",
     
     execute: async function(message, args, client) {
         
